@@ -1,0 +1,41 @@
+# Netbeans
+*nbactions.xml
+*nbproject/
+*nbproject.xml
+*nb-configuration.xml
+*.nb-gradle
+*.nb-gradle-properties
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+*.idea/
+*out/
+
+# Eclipse
+*.classpath
+*.project
+*.settings
+*bin/
+/subprojects/*/bin
+
+# Maven
+*target/
+
+# Build archives
+*.war
+*.ear
+*.jasper
+
+# Temporary files
+*~     
+*.pdf
+# Vim
+*.sw[op]
+*.sublime-* 
+# OS X
+*.DS_Store
+*.metadata
+
+
