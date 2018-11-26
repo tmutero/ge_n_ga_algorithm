@@ -3,8 +3,8 @@ package tansoft.algorithm.data;
 
 
 import tansoft.algorithm.GeneticAlgorithmEngine;
-import tansoft.algorithm.HillClimbingEngine;
-import tansoft.algorithm.SimulatedAnnealingEngine;
+
+
 import tansoft.algorithm.ga.Mutation;
 import tansoft.algorithm.ga.Selection;
 import tansoft.algorithm.operators.Crossover;
@@ -62,12 +62,8 @@ public class DataCollector {
 			if(combinationsMode) setUpCombinationRuns(); 
 			else setUpNormalRuns();
 			break;
-		case 1:
-			setUpSimulatedAnnealing();
-			break;
-		case 2:
-			setUpFoolishHillClimbing();
-			break;
+
+
 		}
 		
 		
@@ -106,37 +102,9 @@ public class DataCollector {
 		}
 	}
 	
-	private void setUpSimulatedAnnealing() {
-		List<Object> types = parameters.get(5);
-		long maxMillis = (long) parameters.get(7).get(0);
-		numberOfRuns= types.size()*numberOfTrials;
-		Dataset d = Dataset.loadDatasetFromFile(datasetName);
-		for(int i=0;i<types.size();i++) {
-			for(int j=0;j<numberOfTrials;j++) {
-				runQueue.add(new SimulatedAnnealingEngine(d, i+""+j)
-				.setMutationType((Mutation.Type)types.get(i))
-				.setVisualizationUpdatePeriod(visualizationUpdatePeriod)
-				.setMaxMillis(maxMillis)
-				.setLoggingEnabled(false));
-			}
-		}
-	}
+
 	
-	private void setUpFoolishHillClimbing() {
-		List<Object> types = parameters.get(5);
-		long maxMillis = (long) parameters.get(7).get(0);
-		numberOfRuns= types.size()*numberOfTrials;
-		Dataset d = Dataset.loadDatasetFromFile(datasetName);
-		for(int i=0;i<types.size();i++) {
-			for(int j=0;j<numberOfTrials;j++) {
-				runQueue.add(new HillClimbingEngine(d, i+""+j)
-				.setMutationType((Mutation.Type)types.get(i))
-				.setVisualizationUpdatePeriod(visualizationUpdatePeriod)
-				.setMaxMillis(maxMillis)
-				.setLoggingEnabled(false));
-			}
-		}
-	}
+
 	
 	private void setUpCombinationRuns() {
 		int numberOfCombinations = 1;

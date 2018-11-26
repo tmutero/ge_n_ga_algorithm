@@ -151,16 +151,11 @@ public class GeneticAlgorithmCreator {
 		lblCreatedByEvan.setForeground(Color.GRAY);
 		frame.getContentPane().add(lblCreatedByEvan, "cell 0 9 2 1,alignx center");
 		
-//		JRadioButton rdbtnSimulatedAnnealing = new JRadioButton("Simulated Annealing");
-//		typeGroup.add(rdbtnSimulatedAnnealing);
-//		typeButtons.add(rdbtnSimulatedAnnealing.getModel());
-//		frame.getContentPane().add(rdbtnSimulatedAnnealing, "cell 1 4");
-//
-//		JRadioButton rdbtnFoolishHillClimbing = new JRadioButton("Foolish Hill Climbing");
-//		typeGroup.add(rdbtnFoolishHillClimbing);
-//		typeButtons.add(rdbtnFoolishHillClimbing.getModel());
-//		frame.getContentPane().add(rdbtnFoolishHillClimbing, "cell 1 4");
-//
+		JRadioButton rdbtnSimulatedAnnealing = new JRadioButton("Gramatical Evolution");
+		typeGroup.add(rdbtnSimulatedAnnealing);
+		typeButtons.add(rdbtnSimulatedAnnealing.getModel());
+		frame.getContentPane().add(rdbtnSimulatedAnnealing, "cell 1 4");
+
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 		
@@ -240,7 +235,7 @@ public class GeneticAlgorithmCreator {
 			comboBox = new JComboBox<>(fileNames);
 			frame.getContentPane().add(comboBox, "cell 1 0,alignx left");
 		} else {
-			comboBox.setModel(new DefaultComboBoxModel<String>(fileNames));
+			comboBox.setModel(new DefaultComboBoxModel<>(fileNames));
 		}
 		
 	}

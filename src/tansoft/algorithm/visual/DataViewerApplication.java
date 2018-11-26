@@ -61,7 +61,7 @@ public class DataViewerApplication  implements DataCollectorListener {
 				}
 			}
 		});
-	}*/
+	}
 
 	/**
 	 * Create the application.
@@ -83,7 +83,7 @@ public class DataViewerApplication  implements DataCollectorListener {
 	 */
 	private void initialize() {
 		frmSimpleGeneticAlgorithm = new JFrame();
-		frmSimpleGeneticAlgorithm.setTitle("Simple Genetic Algorithm: Geometric Connected Dominating Set Problem");
+		frmSimpleGeneticAlgorithm.setTitle("Simple Genetic Algorithm:Health Data Set Problem");
 		frmSimpleGeneticAlgorithm.setBounds(10, 10, 900, 600);
 		frmSimpleGeneticAlgorithm.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		

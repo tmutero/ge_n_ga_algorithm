@@ -1,9 +1,12 @@
 package tansoft.algorithm.data;
 
+import java.util.Random;
+
 
 public class Patient {
 
-    private int id;	//Sample ID
+    private String name;
+   private int id;	//Sample ID
     private int ct; // Clump thickness
     private int usz; // Uniformity of Cell Size
     private int ushp; // Uniformity of Cell Shape
@@ -18,261 +21,117 @@ public class Patient {
     public static final int BENIGN = 2;
     public static final int MALIGNANT = 4;
 
-    private Patient(PatientBuilder builder) {
-	this.id = builder.id;
-	this.ct = builder.ct;
-	this.usz = builder.usz;
-	this.ushp = builder.ushp;
-	this.ma = builder.ma;
-	this.sesz = builder.sesz;
-	this.bn = builder.bn;
-	this.bc = builder.bc;
-	this.nn = builder.nn;
-	this.m = builder.m;
-	this.AClass = builder.Class;
+    public Patient(String name, int id, int ct, int ushp, int ma, int sesz, int bn, int nn, int m, int aClass) {
+this.name=name;
+        this.id = id;
+        this.ct = ct;
+        this.usz = usz;
+        this.ushp = ushp;
+        this.ma = ma;
+        this.sesz = sesz;
+        this.bn = bn;
+        this.bc = bc;
+        this.nn = nn;
+        this.m = m;
+        this.AClass = aClass;
     }
 
-    /**
-     * Sample ID
-     * @return
-     */
     public int getId() {
-	return id;
+        return id;
     }
 
-    /**
-     * Get Clump thickness
-     * 
-     * @return
-     */
     public int getCt() {
-	return ct;
+        return ct;
     }
 
-    /**
-     * Get Uniformity of Cell Size
-     * 
-     * @return
-     */
     public int getUsz() {
-	return usz;
+        return usz;
     }
 
-    /**
-     * Get Uniformity of Cell Shape
-     * 
-     * @return
-     */
     public int getUshp() {
-	return ushp;
+        return ushp;
     }
 
-    /**
-     * Get Marginal Adhesion
-     * 
-     * @return
-     */
     public int getMa() {
-	return ma;
+        return ma;
     }
 
-    /**
-     * Get SingleEpithelial Cell Size
-     * 
-     * @return
-     */
     public int getSesz() {
-	return ma;
+        return sesz;
     }
 
-    /**
-     * Get Bare Nuclei
-     * 
-     * @return
-     */
     public int getBn() {
-	return bn;
+        return bn;
     }
 
-    /**
-     * Get Bland Chromatin
-     * 
-     * @return
-     */
     public int getBc() {
-	return bc;
+        return bc;
     }
 
-    /**
-     * Get Normal Nucleoli
-     * 
-     * @return
-     */
     public int getNn() {
-	return nn;
+        return nn;
     }
 
-    /**
-     * Get Mitoses
-     * 
-     * @return
-     */
     public int getM() {
-	return m;
+        return m;
     }
 
-    /**
-     * Cancer Class - 2 for benign, 4 for malignant
-     * 
-     * @return
-     */
     public int getAClass() {
-	return AClass;
+        return AClass;
     }
 
-    @Override
-    public String toString() {
-	return "Patient - id: " + id + " ct: " + ct + " usz: " + usz
-		+ " ushp: " + ushp + " ma: " + ma + " sesz: " + sesz + " bn: " + bn + " bc: " + bc
-		+ " nn: " + nn + " m: " + m + " class: " + AClass;
+    public String getName () {
+        return name;
     }
 
-    
-    public static class PatientBuilder {
-	private int id;
-	private int ct; // Clump thickness
-	private int usz; // Uniformity of Cell Size
-	private int ushp; // Uniformity of Cell Shape
-	private int ma; // Marginal Adhesion
-	private int sesz; // SingleEpithelial Cell Size
-	private int bn; // Bare Nuclei
-	private int bc; // Bland Chromatin
-	private int nn; // Normal Nucleoli
-	private int m; // Mitoses
-	private int Class; // Class - 2 for benign, 4 for malignant
-
-	/**
-	 * Construct a new Cancer patient builder.
-	 * @param id The sample id
-	 */
-	public PatientBuilder(int id) {
-	    this.id = id;
-	}
-
-	/**
-	 * Clump thickness
-	 * 
-	 * @param ct Clump thickness
-	 * @return
-	 */
-	public PatientBuilder ct(int ct) {
-	    this.ct = ct;
-	    return this;
-	}
-
-	/**
-	 * Uniformity of Cell Size
-	 * 
-	 * @param usz Uniformity of Cell Size
-	 * @return
-	 */
-	public PatientBuilder usz(int usz) {
-	    this.usz = usz;
-	    return this;
-	}
-
-	/**
-	 * Uniformity of Cell Shape
-	 * 
-	 * @param ushp Uniformity of Cell Shape
-	 * @return
-	 */
-	public PatientBuilder ushp(int ushp) {
-	    this.ushp = ushp;
-	    return this;
-	}
-
-	/**
-	 * Marginal Adhesion
-	 * 
-	 * @param ma Marginal Adhesion
-	 * @return
-	 */
-	public PatientBuilder ma(int ma) {
-	    this.ma = ma;
-	    return this;
-	}
-
-	/**
-	 * SingleEpithelial Cell Size
-	 * 
-	 * @param sesz SingleEpithelial Cell Size
-	 * @return
-	 */
-	public PatientBuilder sesz(int sesz) {
-	    this.sesz = sesz;
-	    return this;
-	}
-
-	/**
-	 * Bare Nuclei
-	 * 
-	 * @param bn Bare Nuclei
-	 * @return
-	 */
-	public PatientBuilder bn(int bn) {
-	    this.bn = bn;
-	    return this;
-	}
-
-	/**
-	 * Bland Chromatin
-	 * 
-	 * @param bc Bland Chromatin
-	 * @return
-	 */
-	public PatientBuilder bc(int bc) {
-	    this.bc = bc;
-	    return this;
-	}
-
-	/**
-	 * Normal Nucleoli
-	 * 
-	 * @param nn Normal Nucleoli
-	 * @return
-	 */
-	public PatientBuilder nn(int nn) {
-	    this.nn = nn;
-	    return this;
-	}
-
-	/**
-	 * Mitoses
-	 * 
-	 * @param m Mitoses
-	 * @return
-	 */
-	public PatientBuilder m(int m) {
-	    this.m = m;
-	    return this;
-	}
-
-
-	public PatientBuilder Class(int Class) {
-	    this.Class = Class;
-	    return this;
-	}
-
-	/**
-	 * Return a new Cancer Patient based on the values set on this builder
-	 * object
-	 * 
-	 * @return A new Cancer Patient
-	 */
-	public Patient build() {
-	    return new Patient(this);
-	}
+    public Patient(int id, int ct, int usz, int ushp, int ma, int sesz, int bn, int bc, int nn, int m, int AClass) {
+        this.id = id;
+        this.ct = ct;
+        this.usz = usz;
+        this.ushp = ushp;
+        this.ma = ma;
+        this.sesz = sesz;
+        this.bn = bn;
+        this.bc = bc;
+        this.nn = nn;
+        this.m = m;
+        this.AClass = AClass;
     }
+
+    public static Patient getRandomClassifaction (Random random) {
+        String name = getRandomName(random);
+        int id = random.nextInt(500);
+        int ct = random.nextInt(500);
+        int ushp = random.nextInt(500);
+        int ma = random.nextInt(500);
+        int sesz = random.nextInt(500);
+        int bn = random.nextInt(500);
+        int nn = random.nextInt(500);
+        int m = random.nextInt(500);
+        int AClass = random.nextInt(500);
+
+        return new Patient(name,id,ct,ushp,ma,sesz,bn,nn,m,AClass);
+    }
+
+    private static String getRandomName (Random random) {
+
+        // Create an array with random integers.
+        int[] name = new int[random.nextInt(5)+3];
+        for (int i = 0; i < name.length; i++) {
+            name[i] = random.nextInt(26) + 65;
+        }
+
+        // Convert the integers in the array to chars.
+        // Add each char to StringBuilder.
+        StringBuilder sb = new StringBuilder();
+        for (int i : name) {
+            sb.append((char) i);
+        }
+
+        return new String(sb);
+    }
+
+
+
 
 }

@@ -17,12 +17,7 @@ public class GAFrame extends JFrame implements KeyListener {
 	public static final int OFFSET_X = 17;
 	public static final int OFFSET_Y = 69;
 
-	List<Point> points;
-	float distance;
-
-	int circleSize = 8;
-
-	BitSet draw;
+		BitSet draw;
 	String infoString;
 	Dataset dataset;
 
@@ -30,9 +25,7 @@ public class GAFrame extends JFrame implements KeyListener {
 		this(dataset, null, null);
 	}
 	
-	public GAFrame(Dataset dataset, BitSet draw) {
-		this(dataset, draw, null);
-	}
+
 
 	public GAFrame(Dataset dataset, BitSet draw, String infoString) {
 		this.dataset = dataset;
@@ -52,11 +45,11 @@ public class GAFrame extends JFrame implements KeyListener {
 		repaint();
 	}
 
-	public void paint(Graphics g) {
-		Image image = ImageGenerator.generateImage(dataset, draw, infoString);
-		g.drawImage(image, 8, 30, this);
-	}
-	
+//	public void paint(Graphics g) {
+//		Image image = ImageGenerator.generateImage(dataset, draw, infoString);
+//		g.drawImage(image, 8, 30, this);
+//	}
+//
 	public void update(Graphics g) {
 		Graphics offgc;
 		Image offscreen = null;
