@@ -61,9 +61,7 @@ public class Mutation {
 		Chromosome bestChromosome = null;
 		
 		int numberOfCombinations = (int) Math.pow(2, adjacencyList.size());
-		//System.out.println("hypermutating: "+numberOfCombinations);
-		
-		
+
 		for(int i=0;i<numberOfCombinations;i++) {
 			Chromosome tempChromosome = new Chromosome(chromosome);
 			String binary = Integer.toBinaryString(i);

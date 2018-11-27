@@ -9,11 +9,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-/**
- * 
- * @author Evan Forbes
- *
- */
 public class Graph {
 	private static final int CONNECTEDNESS_POLL_COUNT = 4;
 	

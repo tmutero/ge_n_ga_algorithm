@@ -53,7 +53,7 @@ public class Chromosome implements Comparable<Chromosome> {
 	public float getFitness() {
 		if (validFitness) return fitness;
 
-		//Graph graph = dataset.getGraph();
+		Graph graph = dataset.getGraph();
 		
 		//Calculate the number of covered points
 		BitSet covered = new BitSet(chromosome.length());
@@ -63,11 +63,11 @@ public class Chromosome implements Comparable<Chromosome> {
 
 		for(int i=0;i<selectedIndexes.size();i++) {
 			selectedPoints.add(dataset.getPoints().get(selectedIndexes.get(i)));
-		//	List<Integer> connectedToSelected = graph.getConnectedIndexes(selectedIndexes.get(i));
+			List<Integer> connectedToSelected = graph.getConnectedIndexes(selectedIndexes.get(i));
 
-		//	for(int j=0;j<connectedToSelected.size();j++) {
-		//		covered.set(connectedToSelected.get(j));
-		//	}
+			for(int j=0;j<connectedToSelected.size();j++) {
+				covered.set(connectedToSelected.get(j));
+			}
 		}
 		
 		int numberOfCoveredPoints = covered.cardinality();
