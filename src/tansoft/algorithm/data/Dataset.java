@@ -66,8 +66,6 @@ public class Dataset {
             int numberOfPoints = in.nextInt();
             float id =in.nextFloat();
             float ct=in.nextFloat();
-            System.out.println("number of pointss ------------"+numberOfPoints);
-            System.out.println("----------------------"+id+"++++++++++++++"+ct);
 
 
 
@@ -75,11 +73,11 @@ public class Dataset {
 
 
             for(int i=0;i<numberOfPoints;i++) {
-                Point p = new Point(id,id);
+                Point p = new Point(id,ct);
                 points.add(p);
             }
             newDataset.points = points;
-          newDataset.graph = generateGraphFromPoints(points, newDataset.getMaxDistance());
+            newDataset.graph = generateGraphFromPoints(points, newDataset.getMaxDistance());
             newDataset.adjacencyList = generateAdjacencyList(newDataset.graph, points);
             in.close();
             return newDataset;
